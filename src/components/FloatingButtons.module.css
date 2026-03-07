@@ -1,3 +1,4 @@
+/* ── Container ─────────────────────────────────────────────────── */
 .wrap {
   position: fixed;
   bottom: 28px;
@@ -9,45 +10,164 @@
   align-items: flex-end;
 }
 
+/* ── Shared button base ────────────────────────────────────────── */
 .btn {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 20px;
+  padding: 12px 20px;
   border-radius: 60px;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 0.88rem;
-  color: #fff;
   white-space: nowrap;
   font-family: 'Nunito', sans-serif;
 }
 
-.btn span:first-child { font-size: 1.3rem; }
-
+/* ── Call button — black background, white everything ───────────── */
 .call {
-  background: var(--g1);
-  box-shadow: 0 6px 28px rgba(10, 61, 10, 0.4);
+  background: #000000;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
   animation: vibrate 1.5s ease-in-out infinite;
 }
 
+/* Small circle that holds the phone SVG icon */
+.callIconCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  /* Contrast against black button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: ringShake 1.5s ease-in-out infinite;
+}
+
+.callIconCircle svg {
+  fill: #000000;
+  /* Contrast against white circle */
+}
+
+.callLabel {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+/* ── WhatsApp button — unchanged green ─────────────────────────── */
 .wa {
-  background: var(--wa);
+  background: var(--wa, #25d366);
   box-shadow: 0 6px 28px rgba(37, 211, 102, 0.4);
+  color: #fff;
   animation: vibrate 1.5s ease-in-out infinite 0.75s;
 }
 
-@keyframes vibrate {
-  0%, 100% { transform: translateX(0); }
-  10%       { transform: translateX(-3px) rotate(-2deg); }
-  20%       { transform: translateX(3px) rotate(2deg); }
-  30%       { transform: translateX(-3px) rotate(0deg); }
-  40%       { transform: translateX(3px); }
-  50%       { transform: translateX(0); }
+.label {
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 800;
 }
 
+/* ── Vibrate (whole button) ────────────────────────────────────── */
+@keyframes vibrate {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+
+  20% {
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  30% {
+    transform: translateX(-3px) rotate(0deg);
+  }
+
+  40% {
+    transform: translateX(3px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+}
+
+/* ── Phone icon ring shake (icon circle only) ──────────────────── */
+@keyframes ringShake {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(-18deg);
+  }
+
+  20% {
+    transform: rotate(18deg);
+  }
+
+  30% {
+    transform: rotate(-12deg);
+  }
+
+  40% {
+    transform: rotate(12deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+/* ── Mobile: hide label text, show icon-only pill ──────────────── */
 @media (max-width: 500px) {
-  .label { display: none; }
-  .btn { padding: 14px 16px; border-radius: 50%; }
+  .wrap {
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    left: auto;
+    /* Ensure it doesn't stretch across */
+    width: auto;
+  }
+
+  .label,
+  .callLabel {
+    display: none;
+  }
+
+  .btn {
+    padding: 12px 16px;
+    border-radius: 50px;
+    /* Changed from 50% to 50px for pill shape if needed, but flex: none */
+    gap: 6px;
+    flex: none;
+    /* Prevent stretching */
+    justify-content: center;
+  }
+
+  /* Ensure the circle and icon are properly visible and centered */
+  .callIconCircle {
+    width: 24px;
+    height: 24px;
+    background: #ffffff;
+    /* Restore white circle on mobile for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

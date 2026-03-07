@@ -1,4 +1,4 @@
-import logo from '../assets/AyurnathLogo.png';
+import logo from '../assets/logo.png';
 import { productData } from '../data';
 import styles from './Header.module.css';
 
