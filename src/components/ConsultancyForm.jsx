@@ -27,8 +27,8 @@ export default function ConsultancyForm() {
             <div className={styles.container}>
                 <div className={styles.header}>
                     <span className={styles.badge}>Free Consultancy</span>
-                    <h2 className={styles.title}>Talk to Our Wellness Expert</h2>
-                    <p className={styles.subtitle}>Fill the form below to get a personalized advice from our top ayurvedic experts through WhatsApp.</p>
+                    <h2 className={styles.title}>📩 Free Personalized Consultation</h2>
+                    <p className={styles.subtitle}>Submit for Free Consultancy — get personalized advice from our Ayurvedic experts via WhatsApp.</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className={styles.form}>

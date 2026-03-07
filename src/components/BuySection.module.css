@@ -116,9 +116,9 @@
 
 /* Buy Button */
 .buyBtn {
+  display: inline-block;
   background: #fff;
   color: var(--g1);
-  border: none;
   padding: 20px 60px;
   border-radius: 60px;
   font-size: 1.15rem;
@@ -131,6 +131,8 @@
   position: relative;
   z-index: 1;
   animation: pulse 2.5s ease-in-out infinite;
+  text-decoration: none;
+  border: none;
 }
 
 @keyframes pulse {
@@ -149,6 +151,52 @@
   transform: translateY(-3px);
   animation: none;
   box-shadow: 0 14px 50px rgba(0, 0, 0, 0.3);
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaBtn,
+.ctaBtnWa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.ctaBtn {
+  background: #fff;
+  color: var(--g1);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.25);
+}
+
+.ctaBtnWa {
+  background: var(--wa);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+}
+
+.ctaBtnWa:hover {
+  background: #1db954;
+  transform: translateY(-2px);
 }
 
 .formWrap {
