@@ -9,18 +9,35 @@
   position: sticky;
   top: 0;
   z-index: 2000;
+  max-width: 100%;
 }
 
 .ticker {
   display: flex;
-  gap: 60px;
+  gap: 30px;
+  /* Reduced gap for mobile */
   white-space: nowrap;
   animation: slide 28s linear infinite;
 }
 
+@media (max-width: 600px) {
+  .ticker {
+    gap: 15px;
+  }
+
+  .bar {
+    font-size: 0.7rem;
+  }
+}
+
 @keyframes slide {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .item {

@@ -1,6 +1,8 @@
 .section {
   background: var(--mint);
   padding: 64px 5%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .header {

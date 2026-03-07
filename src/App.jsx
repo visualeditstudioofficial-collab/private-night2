@@ -11,6 +11,7 @@ import {
   Dosage,
   FAQ,
 } from './components/InfoSections';
+import ReviewSection from './components/ReviewSection';
 import BuySection from './components/BuySection';
 import FloatingButtons from './components/FloatingButtons';
 import Footer from './components/Footer';
@@ -28,6 +29,7 @@ export default function App() {
       <Highlights />
       <Delivery />
       <Dosage />
+      <ReviewSection />
       <FAQ />
       <BuySection />
       <Footer />
@@ -35,3 +37,4 @@ export default function App() {
     </>
   );
 }
+

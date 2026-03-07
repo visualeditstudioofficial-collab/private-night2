@@ -4,9 +4,10 @@ import hero1 from '../assets/hero-1.jpeg';
 import hero2 from '../assets/hero-2.jpeg';
 import hero3 from '../assets/hero-3.jpeg';
 import hero4 from '../assets/hero-4.jpeg';
-import productHero from '../assets/product-hero.webp';
-import ad14 from '../assets/ad14.jpeg';
+import capsulImg from '../assets/capsul.png';
+import oilImg from '../assets/oil.png';
 import styles from './ProductSection.module.css';
+import ConsultancyForm from './ConsultancyForm';
 
 const GALLERY = [hero1, hero2, hero3, hero4];
 const LANG_LABELS = { en: 'English', hi: 'हिंदी', bn: 'বাংলা' };
@@ -33,6 +34,10 @@ export default function ProductSection() {
               <img src={img} alt={`View ${i + 1}`} />
             </div>
           ))}
+        </div>
+
+        <div className={styles.formContainer}>
+          <ConsultancyForm />
         </div>
       </div>
 
@@ -64,45 +69,51 @@ export default function ProductSection() {
         {/* Combo Cards */}
         <div className={styles.comboGrid}>
           <div className={styles.comboCard}>
-            <img src={productHero} alt="Capsules" className={styles.comboImg} />
-            <h4>💊 Private Knight Capsules</h4>
-            <p className={styles.qty}>30 Capsules</p>
-            <ul>
-              {langData.capsuleBenefits.map((b, i) => <li key={i}>{b}</li>)}
-            </ul>
+            <div className={styles.comboImgWrap}>
+              <img src={capsulImg} alt="Private Knight Capsules" className={styles.comboImg} />
+            </div>
+            <div className={styles.comboCardBody}>
+              <h4>💊 {productData.comboItems[0].name}</h4>
+              <p className={styles.qty}>{productData.comboItems[0].qty}</p>
+              <ul>
+                {langData.capsuleBenefits.map((b, i) => <li key={i}>{b}</li>)}
+              </ul>
+            </div>
           </div>
+
           <div className={styles.comboCard}>
-            <img src={ad14} alt="Oil" className={styles.comboImg} />
-            <h4>🫙 Private Knight Oil</h4>
-            <p className={styles.qty}>50ml</p>
-            <ul>
-              {langData.oilBenefits.map((b, i) => <li key={i}>{b}</li>)}
-            </ul>
+            <div className={styles.comboImgWrap}>
+              <img src={oilImg} alt="Private Knight Oil" className={styles.comboImg} />
+            </div>
+            <div className={styles.comboCardBody}>
+              <h4>🫙 {productData.comboItems[1].name}</h4>
+              <p className={styles.qty}>{productData.comboItems[1].qty}</p>
+              <ul>
+                {langData.oilBenefits.map((b, i) => <li key={i}>{b}</li>)}
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* Why Choose Pills */}
+        {/* Trust pills — match reference */}
         <div className={styles.whyRow}>
-          {productData.comboItems[0].benefits.slice(0, 4).map((_, i) => (
-            <span key={i} className={styles.wpill}>✅ {
-              ['100% Ayurvedic', 'Zero Chemicals', 'No Side Effects', 'Visible Results'][i]
-            }</span>
+          {['100% Ayurvedic', 'Zero Chemicals', 'No Side Effects'].map((label, i) => (
+            <span key={i} className={styles.wpill}>✅ {label}</span>
           ))}
         </div>
 
-        {/* No price note */}
-        <div className={styles.noPriceNote}>
-          <p>💰 <strong>Special Price Available</strong> — Click <strong>"Buy Now"</strong> below to reveal your exclusive price & place your order!</p>
-        </div>
-
-        {/* Contact Buttons */}
-        <div className={styles.contactBig}>
-          <a href={`tel:${productData.phone}`} className={`${styles.cbtn} ${styles.callBtn}`}>
-            📞 Call Now
-          </a>
-          <a href={`https://wa.me/${productData.whatsapp}`} className={`${styles.cbtn} ${styles.waBtn}`} target="_blank" rel="noreferrer">
-            💬 WhatsApp
-          </a>
+        {/* Free Consultancy CTA */}
+        <div className={styles.consultancyCta}>
+          <span className={styles.consultancyLabel}>Free Consultancy</span>
+          <p className={styles.consultancyText}>⚡ Contact us now to get Free Consultation from our experts!</p>
+          <div className={styles.contactBig}>
+            <a href={`tel:${productData.phone}`} className={`${styles.cbtn} ${styles.callBtn}`}>
+              📞 Call Now
+            </a>
+            <a href={`https://wa.me/${productData.whatsapp}`} className={`${styles.cbtn} ${styles.waBtn}`} target="_blank" rel="noreferrer">
+              💬 WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>

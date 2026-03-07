@@ -14,13 +14,33 @@
   --wa: #25d366;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   font-family: 'Nunito', sans-serif;
   background: var(--white);
   color: var(--dark);
+  position: relative;
+  width: 100%;
   overflow-x: hidden;
+  max-width: 100vw;
+  overflow-wrap: break-word;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 /* Scroll animation utility */
@@ -29,6 +49,7 @@ body {
   transform: translateY(28px);
   transition: 0.65s ease;
 }
+
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);

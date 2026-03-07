@@ -1,0 +1,101 @@
+.page {
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+}
+
+.content h1 {
+    color: #c9a227;
+    /* Gold color matching product themes */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content h2 {
+    color: #c9a227;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+    padding-bottom: 5px;
+}
+
+.content p {
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.content ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.content li {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.content a {
+    color: #c9a227;
+    text-decoration: underline;
+}
+
+.content a:hover {
+    color: #e5c05c;
+}
+
+.updated {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin-bottom: 30px !important;
+    text-align: center;
+}
+
+.contactInfo {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.contactInfo p {
+    margin-bottom: 5px;
+}
+
+.signature {
+    text-align: center;
+    margin-top: 40px !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #c9a227 !important;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 25px;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 60px 15px;
+    }
+}

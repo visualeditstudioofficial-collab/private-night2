@@ -38,6 +38,8 @@
 .whySec {
   background: var(--white);
   padding: 64px 5%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .whyGrid {
@@ -71,6 +73,8 @@
 .worksSec {
   background: var(--pale);
   padding: 64px 5%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .worksGrid {
@@ -112,6 +116,8 @@
 .hlSec {
   background: var(--g1);
   padding: 64px 5%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .hlGrid {
@@ -145,6 +151,8 @@
 .deliverySec {
   background: var(--white);
   padding: 64px 5%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .steps {
@@ -195,6 +203,8 @@
 .dosageSec {
   background: var(--pale);
   padding: 64px 5%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .dosageGrid {
@@ -222,6 +232,8 @@
 .faqSec {
   background: var(--white);
   padding: 64px 5%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .faqList {
@@ -302,4 +314,8 @@
 
 @media (max-width: 480px) {
   .whyGrid, .hlGrid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 380px) {
+  .step { min-width: 0; flex: 1 1 100%; }
 }
