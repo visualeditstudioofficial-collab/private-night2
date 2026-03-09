@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --g1: #0a3d0a;
+  --g2: #145214;
+  --g3: #1e7a1e;
+  --g4: #2eaa2e;
+  --g5: #4ccc4c;
+  --pale: #edf7ed;
+  --mint: #f4fbf4;
+  --border: #b8ddb8;
+  --white: #ffffff;
+  --dark: #111811;
+  --mid: #3a4a3a;
+  --muted: #6a7a6a;
+  --wa: #25d366;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--white);
+  color: var(--dark);
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+main {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Scroll animation utility */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: 0.65s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
